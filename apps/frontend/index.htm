@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AKS Production Demo</title>
+</head>
+<body>
+    <h1>AKS Production Ingress Demo</h1>
+    <button onclick="callApi()">Call Backend</button>
+    <pre id="output"></pre>
+
+    <script>
+        function callApi() {
+            fetch('/api')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("output").innerText =
+                        JSON.stringify(data, null, 2);
+                });
+        }
+    </script>
+</body>
+</html>
